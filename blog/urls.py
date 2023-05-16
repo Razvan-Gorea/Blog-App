@@ -5,7 +5,7 @@ from . import views
 
 #when a path is requested, a view is called to handle the request
 
-#E.g when a user goes to '', the home view is called
+#E.g when a user goes to the '' (empty path), the home view is called
 
 urlpatterns = [
     path('', views.home, name='blog-home'),
