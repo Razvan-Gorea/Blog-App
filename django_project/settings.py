@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog.apps.BlogConfig', #new <---- Blog App
+    'blog.apps.BlogConfig', #new <---- Blog App found in blog/apps.py
+    'users.apps.UsersConfig', #new <---- Users App found in users/apps.py
 ]
 
 MIDDLEWARE = [
