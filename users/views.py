@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 
@@ -8,6 +8,7 @@ def register(request):
         if form.is_valid():
             username = form.cleaned_data.get('username') # get the username from the form
             messages.success(request, f'Account created for {username}!') # send a success message
+            return redirect('blog-home') # redirect to the home page
     else:
         form = UserCreationForm()
     return render(request, 'users/register.html', {'form': form}) # form value is the form variable defined above
