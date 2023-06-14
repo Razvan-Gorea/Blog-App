@@ -12,4 +12,4 @@ def register(request):
             return redirect('blog-home') # redirect to the home page
     else:
         form = UserRegisterForm()
-    return render(request, 'users/register.html', {'form': form}) # form value is the form variable defined above
+    return render(request=request, template_name='users/register.html', context={'register_form': form}) # form value is the form variable defined above
