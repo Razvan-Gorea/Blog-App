@@ -129,3 +129,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4' #new <---- Crispy Forms
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4' #new <---- Crispy Forms
+
+LOGIN_REDIRECT_URL = 'blog-home' #new <---- Users App
