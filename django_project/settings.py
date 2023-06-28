@@ -131,3 +131,5 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4' #new <---- Crispy Forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4' #new <---- Crispy Forms
 
 LOGIN_REDIRECT_URL = 'blog-home' #new <---- Users App
+
+LOGIN_URL = 'login' #new <---- Users App
