@@ -7,7 +7,7 @@ class Post(models.Model):
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     # if author is deleted, delete the post(s) associated with that author
-    author  = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     # what appears on the admin page
     def __str__(self):
