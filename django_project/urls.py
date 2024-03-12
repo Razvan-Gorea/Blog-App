@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views # import views from auth app
 from django.urls import path, include
 from users import views as user_views # import views from users app
+from django.contrib.auth.views import LogoutView
 
 #urls for app(s) within this django project
 
@@ -25,6 +26,6 @@ urlpatterns = [
     path('register/', user_views.register, name='register'), # when a user goes to the register path, the register view is called
     path('profile/', user_views.profile, name='profile'), # when a user goes to the register path, the register view is called
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'), # when a user goes to the login path, the login view is called
-    path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'), # when a user goes to the login path, the login view is called
+    path('logout/', user_views.logout_view, name='logout_view'), # when a user goes to the login path, the login view is called
     path('', include('blog.urls')),
 ]

@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegisterForm # import the form we created in forms.py
 from django.contrib.auth.decorators import login_required # import the login required decorator
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+
 
 def register(request):
     if request.method == 'POST': # if the request is a POST request
@@ -18,3 +21,9 @@ def register(request):
 @login_required # this decorator will redirect to the login page if the user is not logged in
 def profile(request):
     return render(request=request, template_name='users/profile.html') # render the profile page
+
+@login_required
+def logout_view(request):
+    logout(request)
+    return render(request, 'users/logout.html') # render the profile page
+
