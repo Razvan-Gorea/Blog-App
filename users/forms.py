@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from .models import Profile
 
 # create a form that inherits from UserCreationForm
 
@@ -17,3 +18,15 @@ class UserRegisterForm(UserCreationForm): # UserRegisterForm inherits from UserC
         if commit:
             user.save()
         return user
+
+class UserUpdateForm(forms.ModelForm):
+    email = forms.EmailField() # default is required=True
+
+    class Meta:
+        model = User # model that will be affected
+        fields = ['username', 'email'] # fields that will be displayed on the form and in what order
+
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['image']
