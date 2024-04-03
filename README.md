@@ -25,3 +25,4 @@ The objective of this project is to create a blog application with django that h
 - User can logout by clicking the logout button
 - A profile image can be now displayed on the user's profile, at the moment it can only be accomplished via django admin through the `Profile` model 
 - The profile image has a set default image now, a new profile object is created whenever a new user intance is created. This is accomplished through django signals.
+- User can now edit their username, email and profile image. Additionally, the user's profile image now appears next to their blog posts.
