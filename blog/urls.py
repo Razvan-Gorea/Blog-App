@@ -16,9 +16,9 @@ from .views import (
 
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
-    path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
+    path('about/', views.about, name='blog-about'),
+    path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'), # <int:pk> primary key of a post object
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/new/', PostCreateView.as_view(), name='post-create'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
-    path('about/', views.about, name='blog-about'),
 ]
