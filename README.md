@@ -26,3 +26,4 @@ The objective of this project is to create a blog application with django that h
 - A profile image can be now displayed on the user's profile, at the moment it can only be accomplished via django admin through the `Profile` model 
 - The profile image has a set default image whenever a new user is created, a new profile object is created whenever a new user intance is created. This is accomplished through django signals.
 - User can now edit their username, email and profile image. Additionally, the user's profile image now appears next to their blog posts. Any profile image uploaded gets scaled down to 300x300 px.
+- Pagination has been added to the main page, displaying 5 blog posts per page. This also the same for when a user decides to view a specific user's blog posts.
