@@ -5,7 +5,8 @@ from .views import (
     PostDetailView, 
     PostCreateView,
     PostUpdateView,
-    PostDeleteView
+    PostDeleteView,
+    UserPostListView
     )
 
 #urls for blog app
@@ -16,6 +17,7 @@ from .views import (
 
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
+    path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),
     path('about/', views.about, name='blog-about'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'), # <int:pk> primary key of a post object
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
